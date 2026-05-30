@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Рамиль & Айгуль | 01.08.2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sky-blue: #7EB5D6;
+            --soft-blue: #A8D0E6;
+            --light-blue: #D4EAF7;
+            --pale-blue: #E8F4FC;
+            --white: #FFFFFF;
+            --burgundy: #8B4557;
+            --deep-burgundy: #6B3545;
+            --soft-burgundy: #B87080;
+            --dress-milk: #F5F0E8;
+            --dress-sand: #C9A96E;
+            --dress-brown: #7B5B3A;
+            --dress-blue: #7EB5D6;
+            --dress-burgundy: #8B4557;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--white);
+            color: var(--burgundy);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ===== ANIMATED GRADIENT BACKGROUND ===== */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, 
+                #C8E0F0 0%, 
+                #A8D0E6 25%, 
+                #E5D5C5 50%, 
+                #C8E0F0 75%, 
+                #A8D0E6 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 12s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .animated-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse 80% 50% at 20% 40%, rgba(168, 208, 230, 0.45) 0%, transparent 55%),
+                radial-gradient(ellipse 60% 80% at 80% 60%, rgba(245, 240, 232, 0.55) 0%, transparent 55%),
+                radial-gradient(ellipse 50% 50% at 50% 80%, rgba(212, 234, 247, 0.45) 0%, transparent 55%);
+            animation: floatShapes 20s ease-in-out infinite;
+        }
+
+        @keyframes floatShapes {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(60px, -40px) scale(1.15); }
+            66% { transform: translate(-40px, 30px) scale(0.85); }
+        }
+
+        /* ===== SPLASH SCREEN ===== */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 1.2s ease, visibility 1.2s ease;
+            overflow: hidden;
+            background: linear-gradient(135deg, 
+                #E8F4FC 0%, 
+                #D4EAF7 30%, 
+                #F5F0E8 60%, 
+                #E8F4FC 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 12s ease infinite;
+        }
+
+        #splash-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .splash-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, 
+                rgba(168, 208, 230, 0.3) 0%, 
+                rgba(212, 234, 247, 0.2) 50%, 
+                rgba(232, 244, 252, 0.4) 100%);
+            z-index: 1;
+        }
+
+        .splash-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            cursor: pointer;
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        .splash-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-weight: 500;
+            color: var(--burgundy);
+            letter-spacing: 6px;
+            margin-bottom: 32px;
+            text-shadow: 0 2px 12px rgba(139, 69, 85, 0.15);
+        }
+
+        .splash-arabic {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .arabic-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.5rem;
+            color: var(--burgundy);
+            line-height: 1;
+            text-shadow: 0 2px 12px rgba(139, 69, 85, 0.2);
+            direction: rtl;
+        }
+
+        .arabic-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            color: var(--soft-burgundy);
+            margin-top: 4px;
+            letter-spacing: 2px;
+            opacity: 0.8;
+        }
+
+        .splash-hint {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: var(--soft-burgundy);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        /* ===== GENERAL BLOCKS ===== */
+        .section {
+            width: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 16px;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.6rem, 6vw, 2.4rem);
+            font-weight: 500;
+            color: var(--burgundy);
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+        }
+
+        .divider {
+            width: 50px;
+            height: 1px;
+            background: var(--soft-blue);
+            margin: 16px auto;
+            position: relative;
+        }
+
+        .divider::before {
+            content: 'راي';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 10px;
+            color: var(--burgundy);
+            font-family: 'Cormorant Garamond', serif;
+            left: -30px;
+            letter-spacing: 1px;
+        }
+
+        .divider::after {
+            content: 'raay';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 10px;
+            color: var(--burgundy);
+            font-family: 'Cormorant Garamond', serif;
+            right: -30px;
+            letter-spacing: 1px;
+        }
+
+        /* ===== BLOCK 1: HERO ===== */
+        #hero {
+            min-height: 100vh;
+            min-height: 100dvh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('we1.2.jpg') top center / cover no-repeat;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.4) 30%, transparent 50%, transparent 70%, rgba(255,255,255,0.6) 100%);
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            z-index: 10;
+            text-align: center;
+            padding: 24px 20px 20px;
+            width: 100%;
+            margin: 0;
+        }
+
+        .hero-names {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 10vw, 4rem);
+            font-weight: 600;
+            color: var(--burgundy);
+            letter-spacing: 6px;
+            line-height: 1.1;
+            margin-bottom: 8px;
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        .hero-and {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 10vw, 4rem);
+            font-weight: 600;
+            color: var(--burgundy);
+            letter-spacing: 6px;
+            line-height: 1.1;
+            display: block;
+        }
+
+        .hero-names span {
+            display: block;
+            font-size: 0.5em;
+            letter-spacing: 10px;
+            color: var(--soft-burgundy);
+            margin: 6px 0;
+        }
+
+        .hero-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.2rem, 5vw, 1.8rem);
+            color: var(--burgundy);
+            letter-spacing: 5px;
+            margin-top: 12px;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        
+
+        /* ===== BLOCK 2: INVITATION ===== */
+        #invitation {
+            text-align: center;
+            padding: 56px 20px;
+        }
+
+        .invitation-text {
+            max-width: 420px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.2rem, 4.5vw, 1.5rem);
+            line-height: 2;
+            color: var(--burgundy);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .invitation-text p {
+            margin-bottom: 18px;
+        }
+
+        /* ===== BLOCK 3: CALENDAR ===== */
+        #calendar {
+            padding: 56px 16px;
+        }
+
+        .calendar-container {
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 28px 20px;
+            border: 1px solid rgba(126, 181, 214, 0.2);
+            box-shadow: 0 4px 24px rgba(126, 181, 214, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 360px;
+        }
+
+        .calendar-month {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--burgundy);
+            margin-bottom: 16px;
+            letter-spacing: 4px;
+            font-weight: 500;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .calendar-day-header {
+            font-size: 0.65rem;
+            color: var(--soft-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 2px;
+            font-weight: 700;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            color: var(--burgundy);
+            border-radius: 50%;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .calendar-day.other-month {
+            color: var(--soft-blue);
+            opacity: 0.5;
+        }
+
+        .calendar-day.wedding-day {
+            background: transparent;
+            color: var(--burgundy);
+        }
+
+        .calendar-day.wedding-day .heart-marker {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .calendar-day.wedding-day .heart-marker svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--burgundy);
+            filter: drop-shadow(0 2px 4px rgba(139, 69, 85, 0.3));
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        .calendar-day.wedding-day span {
+            position: relative;
+            z-index: 1;
+            color: white;
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        .countdown {
+            margin-top: 32px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(4px);
+            border-radius: 14px;
+            padding: 14px 18px;
+            min-width: 70px;
+            border: 1px solid rgba(126, 181, 214, 0.15);
+        }
+
+        .countdown-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--burgundy);
+            display: block;
+            line-height: 1;
+            font-weight: 500;
+        }
+
+        .countdown-label {
+            font-size: 0.65rem;
+            color: var(--soft-burgundy);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 6px;
+            font-weight: 700;
+        }
+
+        /* ===== BLOCK 4: TIMELINE ===== */
+        #timeline {
+            padding: 56px 16px 80px;
+            overflow: hidden;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 340px;
+            width: 100%;
+            padding: 20px 0;
+            min-height: 550px;
+        }
+
+        /* Wide smooth wave line */
+        .timeline-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .timeline-wave svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        .wave-line {
+            fill: none;
+            stroke: url(#waveGradient);
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+
+
+        /* Junction labels positioned at wave arc junctions */
+        .timeline-junction {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.7s ease;
+            z-index: 10;
+        }
+
+        .timeline-junction.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 16:00 aligned to LEFT side */
+        .timeline-junction[data-junction="1"] {
+            left: 5%;
+            top: 26%;
+            transform: translate(0, -50%);
+        }
+
+        /* 17:00 aligned to RIGHT side */
+        .timeline-junction[data-junction="2"] {
+            right: 5%;
+            top: 50%;
+            transform: translate(0, -50%);
+            left: auto;
+        }
+
+        /* 18:00 aligned to LEFT side */
+        .timeline-junction[data-junction="3"] {
+            left: 5%;
+            top: 74%;
+            transform: translate(0, -50%);
+        }
+
+        /* All junctions: simple row layout */
+        .timeline-junction.junction-outer {
+            flex-direction: row;
+        }
+
+        /* Left-aligned items (16:00, 18:00): text aligned left */
+        .timeline-junction[data-junction="1"] .junction-label,
+        .timeline-junction[data-junction="3"] .junction-label {
+            text-align: left;
+        }
+
+        /* Right-aligned item (17:00): text aligned right */
+        .timeline-junction[data-junction="2"] .junction-label {
+            text-align: right;
+        }
+
+        .junction-label {
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(8px);
+            padding: 8px 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(126, 181, 214, 0.15);
+            box-shadow: 0 2px 10px rgba(126, 181, 214, 0.1);
+        }
+
+        .junction-time {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--burgundy);
+            font-weight: 700;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .junction-event {
+            font-size: 0.78rem;
+            color: var(--burgundy);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .timeline-heart-tracker {
+            position: absolute;
+            width: 36px;
+            height: 36px;
+            background: var(--burgundy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(139, 69, 85, 0.35);
+            z-index: 5;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+        }
+
+        .timeline-heart-tracker.visible {
+            opacity: 1;
+        }
+
+
+
+        /* Dots positioned on the wide wave curve */
+
+        /* Dots on the wave: left, right, left, right */
+        .timeline-item:nth-child(1) .timeline-dot { left: 20%; }
+        .timeline-item:nth-child(2) .timeline-dot { right: 20%; left: auto; }
+        .timeline-item:nth-child(3) .timeline-dot { left: 20%; }
+        .timeline-item:nth-child(4) .timeline-dot { right: 20%; left: auto; }
+
+        /* ===== BLOCK 4: TIMELINE ===== *//* ===== BLOCK 5: DRESS CODE ===== */
+        #dresscode {
+            padding: 56px 16px;
+        }
+
+        .dresscode-section {
+            margin: 24px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .dresscode-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--burgundy);
+            margin-bottom: 14px;
+            letter-spacing: 3px;
+            font-weight: 500;
+        }
+
+        .dresscode-subtitle {
+            font-size: 0.85rem;
+            color: var(--soft-burgundy);
+            margin-bottom: 14px;
+            line-height: 1.5;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 500;
+        }
+
+        .dresscode-fabrics {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 14px 0;
+        }
+
+        .fabric-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2.5px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+            overflow: hidden;
+        }
+
+        .fabric-swatch:hover {
+            transform: scale(1.15);
+        }
+
+        .fabric-swatch.milk { background: var(--dress-milk); }
+        .fabric-swatch.sand { background: var(--dress-sand); }
+        .fabric-swatch.brown { background: var(--dress-brown); }
+        .fabric-swatch.blue { background: var(--dress-blue); }
+        .fabric-swatch.burgundy { background: var(--dress-burgundy); }
+        .fabric-swatch.green { background: var(--dress-green); }
+
+        .gallery-container {
+            position: relative;
+            max-width: 320px;
+            margin: 20px auto 0;
+        }
+
+        .gallery-slider {
+            position: relative;
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(126, 181, 214, 0.15);
+            overflow: hidden;
+        }
+
+        .gallery-slide {
+            position: relative;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+            pointer-events: none;
+            display: none;
+        }
+
+        .gallery-slide.active {
+            opacity: 1;
+            pointer-events: auto;
+            display: block;
+        }
+
+        .gallery-slide img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .gallery-slide {
+            min-width: 100%;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-slide img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(4px);
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            color: var(--burgundy);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-btn:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .gallery-btn.prev { left: -12px; }
+        .gallery-btn.next { right: -12px; }
+
+        /* ===== BLOCK 6: LOCATION ===== */
+        #location {
+            padding: 56px 16px;
+        }
+
+        .location-card {
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            max-width: 400px;
+            width: 100%;
+            border: 1px solid rgba(126, 181, 214, 0.15);
+            box-shadow: 0 4px 24px rgba(126, 181, 214, 0.1);
+        }
+
+        .location-photo {
+            width: 100%;
+            height: 220px;
+            background: url('https://kimi-web-img.moonshot.cn/img/avatars.mds.yandex.net/7f421c3fc542e60ba870e2663ee737c2a162e742') center/cover;
+            position: relative;
+        }
+
+        .location-photo::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(255,255,255,0.95), transparent);
+        }
+
+        .location-info {
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        .location-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--burgundy);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .location-address {
+            font-size: 0.85rem;
+            color: var(--soft-burgundy);
+            line-height: 1.7;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .location-map-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--burgundy);
+            color: white;
+            text-decoration: none;
+            border-radius: 24px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            border: 2px solid var(--burgundy);
+            font-weight: 700;
+        }
+
+        .location-map-btn:hover {
+            background: transparent;
+            color: var(--burgundy);
+        }
+
+        /* ===== BLOCK 6.5: DETAILS ===== */
+        #details {
+            padding: 56px 16px;
+        }
+
+        .details-card {
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 32px 24px;
+            max-width: 400px;
+            width: 100%;
+            border: 1px solid rgba(126, 181, 214, 0.15);
+            box-shadow: 0 4px 24px rgba(126, 181, 214, 0.1);
+            text-align: center;
+        }
+
+        
+
+        .details-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.2rem, 4.5vw, 1.5rem);
+            line-height: 1.9;
+            color: var(--burgundy);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .details-text p {
+            margin-bottom: 14px;
+        }
+
+        .details-phone-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--burgundy);
+            color: white;
+            text-decoration: none;
+            border-radius: 24px;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            border: 2px solid var(--burgundy);
+            font-weight: 700;
+        }
+
+        .details-phone-btn:hover {
+            background: transparent;
+            color: var(--burgundy);
+        }
+
+        @media (min-width: 768px) {
+            #details { padding: 72px 24px; }
+            .details-card { max-width: 500px; padding: 40px 32px; }
+            .details-text { font-size: clamp(1.2rem, 4.5vw, 1.5rem); }
+        }
+
+        /* ===== BLOCK 7: RSVP ===== */
+        #rsvp {
+            padding: 56px 16px 64px;
+        }
+
+        .rsvp-form {
+            max-width: 360px;
+            width: 100%;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 28px 20px;
+            border: 1px solid rgba(126, 181, 214, 0.15);
+            box-shadow: 0 4px 24px rgba(126, 181, 214, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--soft-burgundy);
+            margin-bottom: 6px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid var(--light-blue);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.9);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: var(--burgundy);
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--soft-blue);
+            box-shadow: 0 0 0 3px rgba(168, 208, 230, 0.25);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: var(--burgundy);
+            font-weight: 500;
+        }
+
+        .radio-option input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--burgundy);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: var(--burgundy);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .submit-btn:hover {
+            background: var(--deep-burgundy);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 85, 0.25);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-status {
+            margin-top: 16px;
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 0.85rem;
+            display: none;
+            font-weight: 500;
+        }
+
+        .form-status.success {
+            display: block;
+            background: rgba(168, 208, 230, 0.25);
+            color: var(--burgundy);
+            border: 1px solid var(--soft-blue);
+        }
+
+        .form-status.error {
+            display: block;
+            background: rgba(139, 69, 85, 0.08);
+            color: var(--burgundy);
+            border: 1px solid var(--soft-burgundy);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-bg-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .footer-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('u7VLRLIv2iRMwLCd1yxy6yFBampR6eLbgrKUgo2eFYwbYKFgCbF_2KDzsUYYVvjf7K1elgcLerHFxAoe2Z-O9z3L.jpg') center / cover no-repeat;
+        }
+
+        .footer-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(139, 69, 85, 0.4) 100%);
+        }
+
+        .footer-wrapper {
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(6px);
+            border-radius: 20px;
+            padding: 32px 40px;
+            margin: 20px;
+            border: 1px solid rgba(126, 181, 214, 0.15);
+            box-shadow: 0 4px 24px rgba(126, 181, 214, 0.08);
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 0;
+        }
+
+        .footer-heart {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            animation: heartbeat 2s infinite;
+            color: var(--burgundy);
+        }
+
+        .footer-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            letter-spacing: 4px;
+            color: var(--burgundy);
+            font-weight: 500;
+        }
+
+        .footer-date {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            opacity: 0.9;
+            letter-spacing: 2px;
+            color: var(--burgundy);
+            font-weight: 500;
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+
+        /* ===== MOBILE ADAPTATIONS ===== */
+        @media (max-width: 380px) {
+            .hero-names { letter-spacing: 4px; }
+            .calendar-grid { gap: 2px; }
+            .calendar-day { font-size: 0.75rem; }
+            .calendar-day.wedding-day .heart-marker { width: 26px; height: 26px; }
+            .calendar-day.wedding-day .heart-marker svg { width: 22px; height: 22px; }
+            .gallery-slide img { height: 374px; }
+            .splash-title { letter-spacing: 4px; }
+                        .timeline-desc { font-size: 0.65rem; }
+            .splash-arabic { width: 120px; height: 120px; }
+            .arabic-text { font-size: 3.8rem; }
+        }
+
+        @media (min-width: 768px) {
+            .section { padding: 72px 24px; }
+            .hero-content { padding-bottom: 80px; }
+            
+            
+            .calendar-container { padding: 36px 28px; max-width: 400px; }
+            .calendar-grid { gap: 6px; max-width: 340px; }
+            .calendar-day { font-size: 0.95rem; }
+                    .gallery-container { max-width: 380px; }
+            .gallery-slide img { height: 380px; }
+            .location-card { max-width: 500px; }
+            .location-photo { height: 260px; }
+            .rsvp-form { max-width: 420px; padding: 32px 28px; }
+            .footer-bg-section { min-height: unset; height: auto; }
+            .splash-arabic { width: 160px; height: 160px; }
+            .arabic-text { font-size: 5rem; }
+            .invitation-text { max-width: 500px; font-size: 1.4rem; }
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            body { -webkit-overflow-scrolling: touch; }
+        }
+
+        .splash-content, .gallery-btn {
+            user-select: none;
+            -webkit-user-select: none;
+        }
+    
+
+        .rsvp-deadline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1rem, 3.5vw, 1.2rem);
+            color: var(--burgundy);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            max-width: 360px;
+            width: 100%;
+        }
+        /* ===== TITLE CARDS ===== */
+        .title-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 16px 32px;
+            border: 1px solid rgba(126, 181, 214, 0.2);
+            box-shadow: 0 4px 20px rgba(126, 181, 214, 0.1);
+            margin: 0 auto;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .title-card .section-title {
+            margin-bottom: 0;
+        }
+
+        /* ===== INVITATION CARD ===== */
+        .invitation-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 32px 24px;
+            border: 1px solid rgba(126, 181, 214, 0.2);
+            box-shadow: 0 4px 20px rgba(126, 181, 214, 0.1);
+            max-width: 420px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .title-card { max-width: 500px; padding: 20px 40px; }
+            .invitation-card { max-width: 500px; padding: 40px 32px; }
+        }
+
+    
+        /* ===== MUSIC TOGGLE BUTTON ===== */
+        .music-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(139, 69, 85, 0.85);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            cursor: pointer;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 69, 85, 0.3);
+            padding: 0;
+        }
+
+        .music-toggle:hover {
+            background: rgba(139, 69, 85, 1);
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(139, 69, 85, 0.4);
+        }
+
+        .music-toggle svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .music-toggle.playing {
+            animation: pulse-music 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-music {
+            0%, 100% { box-shadow: 0 4px 15px rgba(139, 69, 85, 0.3); }
+            50% { box-shadow: 0 4px 25px rgba(139, 69, 85, 0.6); }
+        }
+
+</style>
+</head>
+<body>
+
+    <!-- ANIMATED GRADIENT BACKGROUND -->
+    <div class="animated-bg"></div>
+
+    <!-- SPLASH SCREEN -->
+    <div id="splash-screen">
+        <div class="splash-overlay"></div>
+        <div class="splash-content" onclick="openSplash()">
+            <div class="splash-title">Приглашение</div>
+            <div class="splash-arabic">
+                <div class="arabic-text">حياة</div>
+                <div class="arabic-subtitle">(жизнь)</div>
+            </div>
+            <div class="splash-hint">Нажмите, чтобы открыть</div>
+        </div>
+    </div>
+
+    <!-- BLOCK 1: HERO -->
+    <section id="hero" class="section">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="hero-names">
+                Рамиль
+                <span class="hero-and">И</span>
+                Айгуль
+            </h1>
+            <div class="hero-date">01 . 08 . 2026</div>
+
+        </div>
+    </section>
+
+    <!-- BLOCK 2: INVITATION -->
+    <section id="invitation" class="section">
+        <div class="divider"></div>
+        <div class="title-card fade-in">
+            <h2 class="section-title">Приглашение</h2>
+        </div>
+        <div class="divider"></div>
+        <div class="invitation-card fade-in">
+            <div class="invitation-text">
+                <p>Дорогие друзья и близкие!</p>
+                <p>Мы с огромной радостью приглашаем вас разделить с нами один из самых важных и счастливых дней в нашей жизни — день нашей свадьбы.</p>
+                <p>Нам было бы невероятно приятно провести этот вечер в кругу самых дорогих и любимых людей.</p>
+                <p>С любовью,<br>Рамиль и Айгуль</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOCK 3: CALENDAR -->
+    <section id="calendar" class="section">
+        <div class="divider"></div>
+        <div class="title-card fade-in">
+            <h2 class="section-title">Сохраните дату</h2>
+        </div>
+        <div class="divider"></div>
+
+        <div class="calendar-container fade-in">
+            <div class="calendar-month">Август 2026</div>
+            <div class="calendar-grid">
+                <div class="calendar-day-header">Пн</div>
+                <div class="calendar-day-header">Вт</div>
+                <div class="calendar-day-header">Ср</div>
+                <div class="calendar-day-header">Чт</div>
+                <div class="calendar-day-header">Пт</div>
+                <div class="calendar-day-header">Сб</div>
+                <div class="calendar-day-header">Вс</div>
+
+                <div class="calendar-day other-month">27</div>
+                <div class="calendar-day other-month">28</div>
+                <div class="calendar-day other-month">29</div>
+                <div class="calendar-day other-month">30</div>
+                <div class="calendar-day other-month">31</div>
+
+                <div class="calendar-day wedding-day">
+                    <div class="heart-marker">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#8B4557"/>
+                        </svg>
+                    </div>
+                    <span>1</span>
+                </div>
+                <div class="calendar-day">2</div>
+                <div class="calendar-day">3</div>
+                <div class="calendar-day">4</div>
+                <div class="calendar-day">5</div>
+                <div class="calendar-day">6</div>
+                <div class="calendar-day">7</div>
+                <div class="calendar-day">8</div>
+                <div class="calendar-day">9</div>
+                <div class="calendar-day">10</div>
+                <div class="calendar-day">11</div>
+                <div class="calendar-day">12</div>
+                <div class="calendar-day">13</div>
+                <div class="calendar-day">14</div>
+                <div class="calendar-day">15</div>
+                <div class="calendar-day">16</div>
+                <div class="calendar-day">17</div>
+                <div class="calendar-day">18</div>
+                <div class="calendar-day">19</div>
+                <div class="calendar-day">20</div>
+                <div class="calendar-day">21</div>
+                <div class="calendar-day">22</div>
+                <div class="calendar-day">23</div>
+                <div class="calendar-day">24</div>
+                <div class="calendar-day">25</div>
+                <div class="calendar-day">26</div>
+                <div class="calendar-day">27</div>
+                <div class="calendar-day">28</div>
+                <div class="calendar-day">29</div>
+                <div class="calendar-day">30</div>
+                <div class="calendar-day">31</div>
+            </div>
+        </div>
+
+        <div class="countdown fade-in" id="countdown">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">0</span>
+                <div class="countdown-label">Дней</div>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">0</span>
+                <div class="countdown-label">Часов</div>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">0</span>
+                <div class="countdown-label">Минут</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOCK 4: TIMELINE -->
+    <section id="timeline" class="section">
+        <div class="divider"></div>
+        <div class="title-card fade-in">
+            <h2 class="section-title">План дня</h2>
+        </div>
+        <div class="divider"></div>
+
+        <div class="timeline-container">
+            <!-- Deep wave SVG -->
+            <div class="timeline-wave">
+                <svg viewBox="0 0 340 500" preserveAspectRatio="none">
+                    <defs>
+                        <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#A8D0E6;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#8B4557;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#A8D0E6;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Deep wave: starts left, goes deep right, back left, deep right, ends left -->
+                    <path class="wave-line" d="M60 10 C60 70, 280 70, 280 130 C280 190, 60 190, 60 250 C60 310, 280 310, 280 370 C280 430, 60 430, 60 490" />
+                </svg>
+            </div>
+
+            <div class="timeline-heart-tracker" id="heartTracker">♥</div>
+
+            <!-- Junction 1-2: 16:00 Сбор -->
+            <div class="timeline-junction junction-outer" data-junction="1">
+                <div class="junction-label">
+                    <div class="junction-time">16:00</div>
+                    <div class="junction-event">Сбор гостей</div>
+                </div>
+            </div>
+
+            <!-- Junction 2-3: 17:00 Церемония -->
+            <div class="timeline-junction junction-outer" data-junction="2">
+                <div class="junction-label">
+                    <div class="junction-time">17:00</div>
+                    <div class="junction-event">Выездная церемония</div>
+                </div>
+            </div>
+
+            <!-- Junction 3-4: 18:00 Банкет -->
+            <div class="timeline-junction junction-outer" data-junction="3">
+                <div class="junction-label">
+                    <div class="junction-time">18:00</div>
+                    <div class="junction-event">Банкет</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BLOCK 5: DRESS CODE -->
+    <section id="dresscode" class="section">
+        <div class="divider"></div>
+        <div class="title-card fade-in">
+            <h2 class="section-title">Дресс-код</h2>
+        </div>
+        <div class="divider"></div>
+
+        <div class="dresscode-section fade-in">
+            <p class="dresscode-subtitle" style="margin-bottom: 20px;">Ткани – натуральные, легкие, дышащие материалы – лен, хлопок. Цвета – молочный, беж, песочный, коричневый, голубой, природные оттенки зеленого, бордовый</p>
+            
+            
+            <div class="dresscode-fabrics">
+                <div class="fabric-swatch milk" title="Молочный" style="background: url('https://kimi-web-img.moonshot.cn/img/img.freepik.com/745df826212c16a372027e3a605789ccf7407cef.jpg') center/cover no-repeat;"></div>
+                <div class="fabric-swatch sand" title="Песочный" style="background: url('https://static.vecteezy.com/system/resources/previews/022/963/432/large_2x/fine-sand-texture-desert-sand-details-of-natural-landscape-photo.jpg') center/cover no-repeat;"></div>
+                <div class="fabric-swatch brown" title="Коричневый" style="background: url('https://avatars.mds.yandex.net/i?id=59931a6b7381332af8a9abe549731cc70c23e612-5603715-images-thumbs&n=13') center/cover no-repeat;"></div>
+                <div class="fabric-swatch blue" title="Голубой" style="background: url('https://img.freepik.com/premium-photo/sky-cloud-blue-background-cloudy-summer-clear-beauty-light-white-texture-spring-horizon_301927-2008.jpg?semt=ais_hybrid') center/cover no-repeat;"></div>
+                <div class="fabric-swatch burgundy" title="Бордовый" style="background: url('https://i.pinimg.com/originals/c9/5a/0a/c95a0a30223ca0b092efa781b4ac4d26.jpg') center/cover no-repeat;"></div>
+                <div class="fabric-swatch green" title="Зелёный" style="background: url('https://img.freepik.com/premium-vector/lush-greenery-vibrant-textured-blur-growth-sunlight-wallpaper-ecology-foliage-life-botanical_597121-29697.jpg?semt=ais_hybrid') center/cover no-repeat;"></div>
+            </div>
+
+            <div class="gallery-container">
+                <button class="gallery-btn prev" onclick="changeSlide('women', -1)">‹</button>
+                <div class="gallery-slider" id="womenGallery">
+                    <div class="gallery-slide active">
+                        <img src="w1.jpg" alt="Образ 1">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="w2.jpg" alt="Образ 2">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="w3.jpg" alt="Образ 3">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="w4.jpg" alt="Образ 4">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="w5.jpg" alt="Образ 5">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="w6.jpg" alt="Образ 6">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="w7.jpg" alt="Образ 7">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="w8.jpg" alt="Образ 8">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="w9.jpg" alt="Образ 9">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="w10.jpg" alt="Образ 10">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="w11.jpg" alt="Образ 11">
+                    </div>
+                </div>
+                <button class="gallery-btn next" onclick="changeSlide('women', 1)">›</button>
+            </div>
+        </div>
+
+        <div class="dresscode-section fade-in">
+            
+            
+            <div class="gallery-container">
+                <button class="gallery-btn prev" onclick="changeSlide('men', -1)">‹</button>
+                <div class="gallery-slider" id="menGallery">
+                    <div class="gallery-slide active">
+                        <img src="m1.jpg" alt="Образ 1">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="m2.jpg" alt="Образ 2">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="m3.jpg" alt="Образ 3">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="m4.jpg" alt="Образ 4">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="m5.jpg" alt="Образ 5">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="m6.jpg" alt="Образ 6">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="m7.jpg" alt="Образ 7">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="m8.jpg" alt="Образ 8">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="m9.jpg" alt="Образ 9">
+                    </div>
+                    <div class="gallery-slide">
+                        <img src="m10.jpg" alt="Образ 10">
+                    </div>
+                </div>
+                <button class="gallery-btn next" onclick="changeSlide('men', 1)">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOCK 6: LOCATION -->
+    <section id="location" class="section">
+        <div class="divider"></div>
+        <div class="title-card fade-in">
+            <h2 class="section-title">Место проведения</h2>
+        </div>
+        <div class="divider"></div>
+
+        <div class="location-card fade-in">
+            <div class="location-info" style="padding-top: 36px;">
+                <div class="location-name">Ресторан «Кунак»</div>
+                <div class="location-address">
+                    с. Николо-Березовка,<br>
+                    Республика Башкортостан,<br>
+                    Россия
+                </div>
+                <a href="https://yandex.ru/maps/?text=село+Николо-Березовка+ресторан+Кунак" 
+                   target="_blank" 
+                   class="location-map-btn">
+                    Открыть в Яндекс Картах
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOCK 6.5: DETAILS -->
+    <section id="details" class="section">
+        <div class="divider"></div>
+        <div class="title-card fade-in">
+            <h2 class="section-title">Детали</h2>
+        </div>
+        <div class="divider"></div>
+
+        <div class="details-card fade-in">
+            <div class="details-text">
+                <p><b>Дорогие</b>, нам будет очень приятно, если Вы подготовите для нас творческий <b>сюрприз</b>. Но просим обязательно <b>сообщить</b> о нем организатору свадьбы — он поможет оформить его и вписать в тайминг торжества.</p>
+                <p>По всем вопросам, связанным с трансфером, торжественным вечером и сюрпризами, просьба обращаться к нашему организатору — <b>Валентина</b>.</p>
+            </div>
+            <a href="tel:+796039338493" class="details-phone-btn">
+                +7 (960) 393-38-493
+            </a>
+        </div>
+    </section>
+
+    <!-- BLOCK 7: RSVP -->
+    <section id="rsvp" class="section">
+        <div class="divider"></div>
+        <div class="title-card fade-in">
+            <h2 class="section-title">Присутствие</h2>
+        </div>
+        <div class="divider"></div>
+
+        <form class="rsvp-form fade-in" id="rsvpForm">
+            <p class="rsvp-deadline">Пожалуйста, заполните анкету до 1 июля.</p>
+            <div class="form-group">
+                <label>Ваше имя и фамилия</label>
+                <input type="text" name="name" required placeholder="Иван Иванов">
+            </div>
+
+            <div class="form-group">
+                <label>Сможете присутствовать?</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="attendance" value="yes" required checked>
+                        <span>Обязательно буду!</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="attendance" value="no">
+                        <span>К сожалению, нет</span>
+                    </label>
+                </div>
+                <div class="radio-group" style="margin-top: 12px;">
+                    <label class="radio-option">
+                        <input type="radio" name="attendance" value="with_partner">
+                        <span>Приду с парой</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group" id="partnerField" style="display: none;">
+                <label>Имя и фамилия партнера</label>
+                <input type="text" name="partner_name" placeholder="Анна Иванова">
+            </div>
+
+            <div class="form-group">
+                <label>Есть ли у вас аллергия или особенности питания?</label>
+                <textarea name="dietary" placeholder="Например: аллергия на орехи, вегетарианец..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Контактный телефон (не обязательно)</label>
+                <input type="tel" name="phone" placeholder="+7 (999) 000-00-00">
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                Отправить ответ
+            </button>
+
+            <div class="form-status" id="formStatus"></div>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer-bg-section">
+        <div class="footer-bg"></div>
+        
+    </div>
+
+    <script>
+        // ===== SPLASH SCREEN =====
+        let musicStarted = false;
+
+        function openSplash() {
+            const splash = document.getElementById('splash-screen');
+            splash.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+
+            // Start playing music after splash opens (user interaction allows autoplay)
+            if (!musicStarted) {
+                const audio = document.getElementById('weddingAudio');
+                audio.volume = 0.5;
+                audio.play().then(() => {
+                    musicStarted = true;
+                    document.getElementById('musicToggle').classList.add('playing');
+                    document.getElementById('musicIconOn').style.display = 'block';
+                    document.getElementById('musicIconOff').style.display = 'none';
+                }).catch(e => {
+                    console.log('Audio play failed:', e);
+                    document.getElementById('musicIconOn').style.display = 'none';
+                    document.getElementById('musicIconOff').style.display = 'block';
+                });
+            }
+        }
+
+        // ===== MUSIC TOGGLE =====
+        function toggleMusic() {
+            const audio = document.getElementById('weddingAudio');
+            const btn = document.getElementById('musicToggle');
+            const iconOn = document.getElementById('musicIconOn');
+            const iconOff = document.getElementById('musicIconOff');
+
+            if (audio.paused) {
+                audio.play().then(() => {
+                    btn.classList.add('playing');
+                    iconOn.style.display = 'block';
+                    iconOff.style.display = 'none';
+                }).catch(e => {
+                    console.log('Audio play failed:', e);
+                });
+            } else {
+                audio.pause();
+                btn.classList.remove('playing');
+                iconOn.style.display = 'none';
+                iconOff.style.display = 'block';
+            }
+        }
+
+        document.body.style.overflow = 'hidden';
+
+        // ===== COUNTDOWN =====
+        function updateCountdown() {
+            const weddingDate = new Date('2026-08-01T16:00:00');
+            const now = new Date();
+            const diff = weddingDate - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+            }
+        }
+
+        setInterval(updateCountdown, 60000);
+        updateCountdown();
+
+        // ===== GALLERY =====
+        const galleries = {
+            women: { current: 0, el: document.getElementById('womenGallery') },
+            men: { current: 0, el: document.getElementById('menGallery') }
+        };
+
+        function changeSlide(gallery, direction) {
+            const slides = galleries[gallery].el.querySelectorAll('.gallery-slide');
+
+            // Hide current slide
+            slides[galleries[gallery].current].classList.remove('active');
+
+            galleries[gallery].current += direction;
+
+            if (galleries[gallery].current < 0) {
+                galleries[gallery].current = slides.length - 1;
+            } else if (galleries[gallery].current >= slides.length) {
+                galleries[gallery].current = 0;
+            }
+
+            // Show new slide
+            slides[galleries[gallery].current].classList.add('active');
+        }
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.querySelectorAll('.gallery-container').forEach((container, index) => {
+            const galleryType = index === 0 ? 'women' : 'men';
+
+            container.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            container.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 50) {
+                    changeSlide(galleryType, diff > 0 ? 1 : -1);
+                }
+            }, { passive: true });
+        });
+
+        // ===== SCROLL ANIMATIONS =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -30px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .timeline-junction').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ===== TIMELINE HEART TRACKER =====
+        const heartTracker = document.getElementById('heartTracker');
+        const timelineSection = document.getElementById('timeline');
+
+        // Cubic Bezier segments matching SVG path:
+        // M60 10 C60 70, 280 70, 280 130 C280 190, 60 190, 60 250 C60 310, 280 310, 280 370 C280 430, 60 430, 60 490
+        const waveSegments = [
+            { p0: {x: 60, y: 10}, cp1: {x: 60, y: 70}, cp2: {x: 280, y: 70}, p1: {x: 280, y: 130} },
+            { p0: {x: 280, y: 130}, cp1: {x: 280, y: 190}, cp2: {x: 60, y: 190}, p1: {x: 60, y: 250} },
+            { p0: {x: 60, y: 250}, cp1: {x: 60, y: 310}, cp2: {x: 280, y: 310}, p1: {x: 280, y: 370} },
+            { p0: {x: 280, y: 370}, cp1: {x: 280, y: 430}, cp2: {x: 60, y: 430}, p1: {x: 60, y: 490} }
+        ];
+
+        function cubicBezierPoint(t, p0, cp1, cp2, p1) {
+            const mt = 1 - t;
+            const mt2 = mt * mt;
+            const mt3 = mt2 * mt;
+            const t2 = t * t;
+            const t3 = t2 * t;
+            return {
+                x: mt3 * p0.x + 3 * mt2 * t * cp1.x + 3 * mt * t2 * cp2.x + t3 * p1.x,
+                y: mt3 * p0.y + 3 * mt2 * t * cp1.y + 3 * mt * t2 * cp2.y + t3 * p1.y
+            };
+        }
+
+        function getSegmentLength(seg) {
+            let length = 0;
+            const steps = 100;
+            let prev = cubicBezierPoint(0, seg.p0, seg.cp1, seg.cp2, seg.p1);
+            for (let i = 1; i <= steps; i++) {
+                const pt = cubicBezierPoint(i / steps, seg.p0, seg.cp1, seg.cp2, seg.p1);
+                const dx = pt.x - prev.x;
+                const dy = pt.y - prev.y;
+                length += Math.sqrt(dx * dx + dy * dy);
+                prev = pt;
+            }
+            return length;
+        }
+
+        const segmentLengths = waveSegments.map(getSegmentLength);
+        const totalLength = segmentLengths.reduce((a, b) => a + b, 0);
+        const cumulativeLengths = [];
+        let cumsum = 0;
+        for (const len of segmentLengths) {
+            cumsum += len;
+            cumulativeLengths.push(cumsum);
+        }
+
+        function getPointOnWave(progress) {
+            const targetLength = progress * totalLength;
+            let segIndex = 0;
+            let prevCumsum = 0;
+            for (let i = 0; i < cumulativeLengths.length; i++) {
+                if (targetLength <= cumulativeLengths[i]) {
+                    segIndex = i;
+                    break;
+                }
+                prevCumsum = cumulativeLengths[i];
+            }
+            const seg = waveSegments[segIndex];
+            const segProgress = (targetLength - prevCumsum) / segmentLengths[segIndex];
+            return cubicBezierPoint(segProgress, seg.p0, seg.cp1, seg.cp2, seg.p1);
+        }
+
+        function updateHeartTracker() {
+            if (!timelineSection) return;
+            const rect = timelineSection.getBoundingClientRect();
+            const viewportCenter = window.innerHeight / 2;
+
+            if (rect.top < viewportCenter && rect.bottom > viewportCenter) {
+                heartTracker.classList.add('visible');
+                const progress = Math.max(0, Math.min(1, (viewportCenter - rect.top) / rect.height));
+                const point = getPointOnWave(progress);
+                const svgWidth = 340;
+                const svgHeight = 500;
+                heartTracker.style.left = ((point.x / svgWidth) * 100) + '%';
+                heartTracker.style.top = ((point.y / svgHeight) * 100) + '%';
+            } else {
+                heartTracker.classList.remove('visible');
+            }
+        }
+
+        window.addEventListener('scroll', updateHeartTracker, { passive: true });
+        window.addEventListener('resize', updateHeartTracker, { passive: true });
+
+        // ===== PARTNER FIELD TOGGLE =====
+        document.querySelectorAll('input[name="attendance"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const partnerField = document.getElementById('partnerField');
+                if (this.value === 'with_partner') {
+                    partnerField.style.display = 'block';
+                    partnerField.querySelector('input').setAttribute('required', 'required');
+                } else {
+                    partnerField.style.display = 'none';
+                    partnerField.querySelector('input').removeAttribute('required');
+                    partnerField.querySelector('input').value = '';
+                }
+            });
+        });
+
+        // ===== FORM SUBMISSION TO GOOGLE SHEETS =====
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwHzBOq0ScrkHVmx-7XInbO-lhBJh06dUr89s6TJQZmOtsYWONi9uoKHX0d53oUGbY/exec';
+
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const btn = document.getElementById('submitBtn');
+            const status = document.getElementById('formStatus');
+            const form = this;
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            // Prepare data for Google Sheets
+            const attendanceValue = data.attendance;
+            let attendanceDisplay = '';
+            if (attendanceValue === 'yes') attendanceDisplay = 'Буду';
+            else if (attendanceValue === 'with_partner') attendanceDisplay = 'Приду с парой';
+            else if (attendanceValue === 'no') attendanceDisplay = 'Не смогу';
+
+            btn.disabled = true;
+            btn.textContent = 'Отправка...';
+            status.className = 'form-status';
+
+            // Build the data object
+            const payload = {
+                name: data.name || '',
+                attendance: attendanceDisplay,
+                partner_name: data.partner_name || '',
+                dietary: data.dietary || '',
+                phone: data.phone || ''
+            };
+
+            // Submit via POST using fetch with proper headers
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'cors',
+                cache: 'no-cache',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(result) {
+                if (result.result === 'success') {
+                    showStatus('success', 'Спасибо! Ваш ответ успешно сохранен!');
+                } else {
+                    showStatus('success', 'Спасибо! Ваш ответ отправлен!');
+                }
+                form.reset();
+                document.getElementById('partnerField').style.display = 'none';
+            })
+            .catch(function(error) {
+                console.log('Fetch error:', error);
+                // Even if fetch fails, try one more time with no-cors
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                }).catch(function() {});
+
+                showStatus('success', 'Спасибо! Ваш ответ отправлен!');
+                form.reset();
+                document.getElementById('partnerField').style.display = 'none';
+            })
+            .finally(function() {
+                btn.disabled = false;
+                btn.textContent = 'Отправить ответ';
+            });
+        });
+
+        function showStatus(type, message) {
+            const status = document.getElementById('formStatus');
+            status.textContent = message;
+            status.className = 'form-status ' + type;
+        }
+    </script>
+
+
+
+
+
+    <!-- AUDIO PLAYER -->
+    <audio id="weddingAudio" loop preload="auto">
+        <source src="Beautiful_Boys_-_Nezhnaya_Lyubov_77602132.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио.
+    </audio>
+
+    <!-- MUSIC TOGGLE BUTTON -->
+    <button id="musicToggle" class="music-toggle" onclick="toggleMusic()" title="Включить/выключить музыку">
+        <svg id="musicIconOn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+        <svg id="musicIconOff" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+    </button>
+
+</body>
+</html>
